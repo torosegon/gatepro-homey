@@ -1,0 +1,27 @@
+{
+  "id": "com.gatepro",
+  "version": "0.1.0",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "platforms": ["local"],
+  "name": {
+    "en": "GatePro",
+    "hu": "GatePro"
+  },
+  "description": {
+    "en": "Control your GatePro gate opener from Homey",
+    "hu": "GatePro kapunyitó vezérlése Homey-ból"
+  },
+  "category": ["security"],
+  "permissions": [],
+  "brandColor": "#E30613",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Egon Toros",
+    "email": "1849338+torosegon@users.noreply.github.com"
+  }
+}

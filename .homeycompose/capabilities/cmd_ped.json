@@ -1,0 +1,8 @@
+{
+  "type": "boolean",
+  "title": { "en": "Pedestrian open", "hu": "Gyalogos nyitás" },
+  "uiComponent": "button",
+  "getable": false,
+  "setable": true,
+  "icon": "/assets/pedestrian.svg"
+}

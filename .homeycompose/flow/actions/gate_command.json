@@ -1,0 +1,18 @@
+{
+  "title": { "en": "Send gate command", "hu": "Kapu parancs küldése" },
+  "titleFormatted": { "en": "Gate: [[command]]", "hu": "Kapu: [[command]]" },
+  "args": [
+    { "type": "device", "name": "device", "filter": "driver_id=gate" },
+    {
+      "type": "dropdown",
+      "name": "command",
+      "title": { "en": "Command", "hu": "Parancs" },
+      "values": [
+        { "id": "open", "title": { "en": "Open", "hu": "Nyitás" } },
+        { "id": "close", "title": { "en": "Close", "hu": "Zárás" } },
+        { "id": "stop", "title": { "en": "Stop", "hu": "Megállítás" } },
+        { "id": "pedestrian", "title": { "en": "Pedestrian open", "hu": "Gyalogos nyitás" } }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.gatepro",
+  "version": "0.1.0",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "GatePro",
+    "hu": "GatePro"
+  },
+  "description": {
+    "en": "Control your GatePro gate opener from Homey",
+    "hu": "GatePro kapunyitó vezérlése Homey-ból"
+  },
+  "category": [
+    "security"
+  ],
+  "permissions": [],
+  "brandColor": "#E30613",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Egon Toros",
+    "email": "1849338+torosegon@users.noreply.github.com"
+  },
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Gate state changed",
+          "hu": "Kapu állapota megváltozott"
+        },
+        "tokens": [
+          {
+            "name": "state",
+            "type": "string",
+            "title": {
+              "en": "State",
+              "hu": "Állapot"
+            },
+            "example": "opening"
+          }
+        ],
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gate"
+          }
+        ],
+        "id": "gate_state_changed"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Send gate command",
+          "hu": "Kapu parancs küldése"
+        },
+        "titleFormatted": {
+          "en": "Gate: [[command]]",
+          "hu": "Kapu: [[command]]"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=gate"
+          },
+          {
+            "type": "dropdown",
+            "name": "command",
+            "title": {
+              "en": "Command",
+              "hu": "Parancs"
+            },
+            "values": [
+              {
+                "id": "open",
+                "title": {
+                  "en": "Open",
+                  "hu": "Nyitás"
+                }
+              },
+              {
+                "id": "close",
+                "title": {
+                  "en": "Close",
+                  "hu": "Zárás"
+                }
+              },
+              {
+                "id": "stop",
+                "title": {
+                  "en": "Stop",
+                  "hu": "Megállítás"
+                }
+              },
+              {
+                "id": "pedestrian",
+                "title": {
+                  "en": "Pedestrian open",
+                  "hu": "Gyalogos nyitás"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "gate_command"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Gate opener",
+        "hu": "Kapunyitó"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_state",
+        "gate_state",
+        "cmd_open",
+        "cmd_close",
+        "cmd_stop",
+        "cmd_ped"
+      ],
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/gate/assets/images/small.png",
+        "large": "/drivers/gate/assets/images/large.png",
+        "xlarge": "/drivers/gate/assets/images/xlarge.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../../../assets/icon.svg",
+            "usernameLabel": {
+              "en": "Chow! account",
+              "hu": "Chow! fiók"
+            },
+            "usernamePlaceholder": {
+              "en": "Chow! account name (not e-mail)",
+              "hu": "Chow! fiók neve (nem e-mail)"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "hu": "Jelszó"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "logo": "../../../assets/icon.svg"
+          }
+        }
+      ],
+      "settings": [
+        {
+          "id": "pin",
+          "type": "password",
+          "label": {
+            "en": "PIN code",
+            "hu": "PIN-kód"
+          },
+          "hint": {
+            "en": "The gate's PIN code from the Chow! app (max. 6 digits).",
+            "hu": "A kapu PIN-kódja a Chow! appból (max. 6 számjegy)."
+          },
+          "value": ""
+        }
+      ],
+      "id": "gate"
+    }
+  ],
+  "capabilities": {
+    "cmd_close": {
+      "type": "boolean",
+      "title": {
+        "en": "Close",
+        "hu": "Zárás"
+      },
+      "uiComponent": "button",
+      "getable": false,
+      "setable": true,
+      "icon": "/assets/close.svg"
+    },
+    "cmd_open": {
+      "type": "boolean",
+      "title": {
+        "en": "Open",
+        "hu": "Nyitás"
+      },
+      "uiComponent": "button",
+      "getable": false,
+      "setable": true,
+      "icon": "/assets/open.svg"
+    },
+    "cmd_ped": {
+      "type": "boolean",
+      "title": {
+        "en": "Pedestrian open",
+        "hu": "Gyalogos nyitás"
+      },
+      "uiComponent": "button",
+      "getable": false,
+      "setable": true,
+      "icon": "/assets/pedestrian.svg"
+    },
+    "cmd_stop": {
+      "type": "boolean",
+      "title": {
+        "en": "Stop",
+        "hu": "Megállítás"
+      },
+      "uiComponent": "button",
+      "getable": false,
+      "setable": true,
+      "icon": "/assets/stop.svg"
+    },
+    "cmd_toggle": {
+      "type": "boolean",
+      "title": {
+        "en": "Open / close / stop",
+        "hu": "Nyit / zár / stop"
+      },
+      "uiComponent": "button",
+      "getable": false,
+      "setable": true,
+      "icon": "/assets/toggle.svg"
+    },
+    "gate_state": {
+      "type": "enum",
+      "title": {
+        "en": "Gate state",
+        "hu": "Kapu állapota"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/gate_state.svg",
+      "values": [
+        {
+          "id": "closed",
+          "title": {
+            "en": "Closed",
+            "hu": "Zárva"
+          }
+        },
+        {
+          "id": "opening",
+          "title": {
+            "en": "Opening",
+            "hu": "Nyílik"
+          }
+        },
+        {
+          "id": "open",
+          "title": {
+            "en": "Open",
+            "hu": "Nyitva"
+          }
+        },
+        {
+          "id": "closing",
+          "title": {
+            "en": "Closing",
+            "hu": "Záródik"
+          }
+        },
+        {
+          "id": "stopped",
+          "title": {
+            "en": "Stopped",
+            "hu": "Megállítva"
+          }
+        },
+        {
+          "id": "unknown",
+          "title": {
+            "en": "Unknown",
+            "hu": "Ismeretlen"
+          }
+        }
+      ]
+    }
+  }
+}

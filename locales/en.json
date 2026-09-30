@@ -1,0 +1,9 @@
+{
+  "pair": {
+    "login_failed": "Login failed. Check your Chow! account e-mail and password."
+  },
+  "errors": {
+    "not_connected": "The Chow! cloud is not reachable.",
+    "invalid_pin": "The PIN code must be 1–6 digits."
+  }
+}

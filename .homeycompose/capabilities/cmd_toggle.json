@@ -1,0 +1,8 @@
+{
+  "type": "boolean",
+  "title": { "en": "Open / close / stop", "hu": "Nyit / zár / stop" },
+  "uiComponent": "button",
+  "getable": false,
+  "setable": true,
+  "icon": "/assets/toggle.svg"
+}

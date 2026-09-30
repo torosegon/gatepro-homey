@@ -1,0 +1,9 @@
+{
+  "title": { "en": "Gate state changed", "hu": "Kapu állapota megváltozott" },
+  "tokens": [
+    { "name": "state", "type": "string", "title": { "en": "State", "hu": "Állapot" }, "example": "opening" }
+  ],
+  "args": [
+    { "type": "device", "name": "device", "filter": "driver_id=gate" }
+  ]
+}

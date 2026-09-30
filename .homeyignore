@@ -1,0 +1,9 @@
+README.md
+PROTOCOL.md
+*.md
+scripts/
+certs/
+*.har
+*.apk
+*.log
+.git/

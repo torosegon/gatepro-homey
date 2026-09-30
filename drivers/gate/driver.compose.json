@@ -1,0 +1,82 @@
+{
+  "name": {
+    "en": "Gate opener",
+    "hu": "Kapunyitó"
+  },
+  "class": "windowcoverings",
+  "capabilities": [
+    "windowcoverings_state",
+    "gate_state",
+    "cmd_open",
+    "cmd_close",
+    "cmd_stop",
+    "cmd_ped"
+  ],
+  "platforms": [
+    "local"
+  ],
+  "connectivity": [
+    "cloud"
+  ],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png",
+    "xlarge": "{{driverAssetsPath}}/images/xlarge.png"
+  },
+  "pair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "logo": "../../../assets/icon.svg",
+        "usernameLabel": {
+          "en": "Chow! account",
+          "hu": "Chow! fiók"
+        },
+        "usernamePlaceholder": {
+          "en": "Chow! account name (not e-mail)",
+          "hu": "Chow! fiók neve (nem e-mail)"
+        },
+        "passwordLabel": {
+          "en": "Password",
+          "hu": "Jelszó"
+        }
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "logo": "../../../assets/icon.svg"
+      }
+    }
+  ],
+  "settings": [
+    {
+      "id": "pin",
+      "type": "password",
+      "label": {
+        "en": "PIN code",
+        "hu": "PIN-kód"
+      },
+      "hint": {
+        "en": "The gate's PIN code from the Chow! app (max. 6 digits).",
+        "hu": "A kapu PIN-kódja a Chow! appból (max. 6 számjegy)."
+      },
+      "value": ""
+    }
+  ]
+}

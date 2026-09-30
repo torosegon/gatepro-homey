@@ -1,0 +1,9 @@
+{
+  "pair": {
+    "login_failed": "Sikertelen bejelentkezés. Ellenőrizd a Chow! fiók e-mail címét és jelszavát."
+  },
+  "errors": {
+    "not_connected": "A Chow! felhő nem érhető el.",
+    "invalid_pin": "A PIN-kód 1–6 számjegyből állhat."
+  }
+}

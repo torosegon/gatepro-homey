@@ -1,0 +1,19 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Gate state",
+    "hu": "Kapu állapota"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/gate_state.svg",
+  "values": [
+    { "id": "closed", "title": { "en": "Closed", "hu": "Zárva" } },
+    { "id": "opening", "title": { "en": "Opening", "hu": "Nyílik" } },
+    { "id": "open", "title": { "en": "Open", "hu": "Nyitva" } },
+    { "id": "closing", "title": { "en": "Closing", "hu": "Záródik" } },
+    { "id": "stopped", "title": { "en": "Stopped", "hu": "Megállítva" } },
+    { "id": "unknown", "title": { "en": "Unknown", "hu": "Ismeretlen" } }
+  ]
+}

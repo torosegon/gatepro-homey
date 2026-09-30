@@ -1,0 +1,9 @@
+node_modules/
+/env.json
+/.homeybuild/
+
+# secrets / captures
+*.har
+env.json
+certs/
+*.apk
